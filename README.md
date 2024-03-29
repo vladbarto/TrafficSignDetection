@@ -4,7 +4,7 @@
 `github.com/NataliaBoncea`, `github.com/vladbarto`
 
 ## Client requirements
-![client_req](./Media/client_requirements.png)
+![client_req](./Media/client_requirements.PNG)
 
 	Being given colour images featuring circular, triangular or rectangular traffic signs, 
 	a method of detection of all traffic signs from these images will be studied and implemented.
