@@ -4,7 +4,7 @@
 `github.com/NataliaBoncea`, `github.com/vladbarto`
 
 ## Starting problem
-![client_req](./Media/client_requirements.PNG)
+![client_req](./Media/client_requirements.jpeg)
 
 	Being given colour images featuring circular, triangular or rectangular traffic signs, 
 	a method of detection of all traffic signs from these images will be studied and implemented.
@@ -16,6 +16,9 @@
 - `Documentation_TSD_PI_SS2023/24.pdf`: Documentation (english)
 	- it's WIP; to edit the document, [see this link](https://docs.google.com/document/d/14YRY6KIQ4P90PXBVY7GbaN0VgnwQGLwolHiTl9EFmdM/edit?usp=sharing)
 - `Media`: folder with pictures for README only
+
+## Workflow (pipeline)
+![pipeline](./Media/pipeline.PNG)
 
 ## Resources
 - Aging algorithm: https://www.youtube.com/watch?v=kJfa2HsTtlg
