@@ -4,7 +4,7 @@
 `github.com/NataliaBoncea`, `github.com/vladbarto`
 
 ## Starting problem
-![client_req](./Media/client_requirements.jpeg)
+![client_req](./Media/client_requirements.PNG)
 
 	Being given colour images featuring circular, triangular or rectangular traffic signs, 
 	a method of detection of all traffic signs from these images will be studied and implemented.
@@ -18,7 +18,7 @@
 - `Media`: folder with pictures for README only
 
 ## Workflow (pipeline)
-![pipeline](./Media/pipeline.PNG)
+![pipeline](./Media/pipeline.jpeg)
 
 ## Resources
 - Aging algorithm: https://www.youtube.com/watch?v=kJfa2HsTtlg
