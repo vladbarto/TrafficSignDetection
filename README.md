@@ -21,7 +21,8 @@
 ![pipeline](./Media/pipeline.jpeg)
 
 ## Resources
-- Tot ce trebe: https://www.opencv-srf.com/2010/09/object-detection-using-color-seperation.html
+- Color detection & Object Tracking (OpenCV Tutorials): https://www.opencv-srf.com/2010/09/object-detection-using-color-seperation.html
+- Shape detection & Tracking using Contours (OpenCV Tutorials): https://www.opencv-srf.com/2011/09/object-detection-tracking-using-contours.html
 - Cod rutier: Clasificare semne de circulatie: https://www.codrutier.ro/semne-de-circulatie
 - Aging algorithm: https://www.youtube.com/watch?v=kJfa2HsTtlg
 - Whole pipeline: https://durak-bolat.de/rsdc.html
