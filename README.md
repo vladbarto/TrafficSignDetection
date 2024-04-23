@@ -26,7 +26,9 @@
 - Cod rutier: Clasificare semne de circulatie: https://www.codrutier.ro/semne-de-circulatie
 - Hough transformation implementation c++ (for detecting edges): https://www.keymolen.com/2013/05/hough-transformation-c-implementation.html
 - Hough transform explanations (mathematically): https://www.youtube.com/watch?v=t1GXMvK9m84&t=263s
-
+- Hough transforn explanations (computer vision - wise): https://www.youtube.com/watch?v=6yVMpaIoxIU
+- Hough transform explained (german): https://www.youtube.com/watch?v=8fyWszvPCQE&t=23s
+  
 - ---
 - Aging algorithm: https://www.youtube.com/watch?v=kJfa2HsTtlg
 - Whole pipeline: https://durak-bolat.de/rsdc.html
