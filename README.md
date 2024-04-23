@@ -25,6 +25,7 @@
 - Shape detection & Tracking using Contours (OpenCV Tutorials): https://www.opencv-srf.com/2011/09/object-detection-tracking-using-contours.html
 - Cod rutier: Clasificare semne de circulatie: https://www.codrutier.ro/semne-de-circulatie
 - Hough transformation implementation c++ (for detecting edges): https://www.keymolen.com/2013/05/hough-transformation-c-implementation.html
+- Hough transform explanations (mathematically): https://www.youtube.com/watch?v=t1GXMvK9m84&t=263s
 
 - ---
 - Aging algorithm: https://www.youtube.com/watch?v=kJfa2HsTtlg
