@@ -1,1 +1,0 @@
-E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\x64\Debug\OpenCVApplication.exe
