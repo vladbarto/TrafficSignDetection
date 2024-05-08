@@ -47,13 +47,13 @@ C:\Users\Vlad\Documents\FACULTA\AN3\SEM2\1. PROIECT_PI\TrafficSignDetection\TSD\
 C:\Users\Vlad\Documents\FACULTA\AN3\SEM2\1. PROIECT_PI\TrafficSignDetection\TSD\OpenCVApplication.cpp(102,20): warning C4309: 'initializing': truncation of constant value
   (compiling source file '/OpenCVApplication.cpp')
   
-C:\Users\Vlad\Documents\FACULTA\AN3\SEM2\1. PROIECT_PI\TrafficSignDetection\TSD\OpenCVApplication.cpp(121,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Vlad\Documents\FACULTA\AN3\SEM2\1. PROIECT_PI\TrafficSignDetection\TSD\OpenCVApplication.cpp(115,38): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   (compiling source file '/OpenCVApplication.cpp')
   
-C:\Users\Vlad\Documents\FACULTA\AN3\SEM2\1. PROIECT_PI\TrafficSignDetection\TSD\OpenCVApplication.cpp(187,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Vlad\Documents\FACULTA\AN3\SEM2\1. PROIECT_PI\TrafficSignDetection\TSD\OpenCVApplication.cpp(181,21): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file '/OpenCVApplication.cpp')
   
-C:\Users\Vlad\Documents\FACULTA\AN3\SEM2\1. PROIECT_PI\TrafficSignDetection\TSD\OpenCVApplication.cpp(206,6): warning C4101: 'op': unreferenced local variable
+C:\Users\Vlad\Documents\FACULTA\AN3\SEM2\1. PROIECT_PI\TrafficSignDetection\TSD\OpenCVApplication.cpp(216,6): warning C4101: 'op': unreferenced local variable
   (compiling source file '/OpenCVApplication.cpp')
   
   OpenCVApplication.vcxproj -> C:\Users\Vlad\Documents\FACULTA\AN3\SEM2\1. PROIECT_PI\TrafficSignDetection\TSD\x64\Debug\OpenCVApplication.exe

@@ -1,5 +1,8 @@
 # Traffic Sign Detection
 # Acest Branch apartine Hough Transform (Vlad)
+## De la MPM
+https://github.com/mirceamp/UDACITY-SDC/blob/master/Term1/PROJECT%202%20-%20Traffic%20Sign%20Classifier%20Project/HW2_MuresanMirceaPaul/HW2_MuresanMirceaPaul/Traffic_Sign_Classifier.ipynb
+
 ## Authors
 `github.com/NataliaBoncea`, `github.com/vladbarto`
 

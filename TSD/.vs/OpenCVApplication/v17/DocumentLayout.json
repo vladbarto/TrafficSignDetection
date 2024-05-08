@@ -11,10 +11,6 @@
       "RelativeMoniker": "D:0:0:{32A91DE2-9143-4739-B125-240F7165D21B}|OpenCVApplication.vcxproj|solutionrelative:TSR.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32A91DE2-9143-4739-B125-240F7165D21B}|OpenCVApplication.vcxproj|C:\\USERS\\VLAD\\DOCUMENTS\\FACULTA\\AN3\\SEM2\\1. PROIECT_PI\\TRAFFICSIGNDETECTION\\TSD\\OPENCV\\INCLUDE\\OPENCV2\\CORE\\MAT.INL.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{32A91DE2-9143-4739-B125-240F7165D21B}|OpenCVApplication.vcxproj|solutionrelative:OPENCV\\INCLUDE\\OPENCV2\\CORE\\MAT.INL.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{32A91DE2-9143-4739-B125-240F7165D21B}|OpenCVApplication.vcxproj|C:\\Users\\Vlad\\Documents\\FACULTA\\AN3\\SEM2\\1. PROIECT_PI\\TrafficSignDetection\\TSD\\TSR.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{32A91DE2-9143-4739-B125-240F7165D21B}|OpenCVApplication.vcxproj|solutionrelative:TSR.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -26,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "TSR.h",
               "DocumentMoniker": "C:\\Users\\Vlad\\Documents\\FACULTA\\AN3\\SEM2\\1. PROIECT_PI\\TrafficSignDetection\\TSD\\TSR.h",
               "RelativeDocumentMoniker": "TSR.h",
@@ -39,7 +35,8 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-10T08:47:25.823Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -49,23 +46,10 @@
               "RelativeDocumentMoniker": "TSR.cpp",
               "ToolTip": "C:\\Users\\Vlad\\Documents\\FACULTA\\AN3\\SEM2\\1. PROIECT_PI\\TrafficSignDetection\\TSD\\TSR.cpp",
               "RelativeToolTip": "TSR.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABoAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAAkAAABoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-10T08:47:15.295Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "mat.inl.hpp",
-              "DocumentMoniker": "C:\\Users\\Vlad\\Documents\\FACULTA\\AN3\\SEM2\\1. PROIECT_PI\\TrafficSignDetection\\TSD\\OpenCV\\include\\opencv2\\core\\mat.inl.hpp",
-              "RelativeDocumentMoniker": "OpenCV\\include\\opencv2\\core\\mat.inl.hpp",
-              "ToolTip": "C:\\Users\\Vlad\\Documents\\FACULTA\\AN3\\SEM2\\1. PROIECT_PI\\TrafficSignDetection\\TSD\\OpenCV\\include\\opencv2\\core\\mat.inl.hpp",
-              "RelativeToolTip": "OpenCV\\include\\opencv2\\core\\mat.inl.hpp",
-              "ViewState": "AQIAAD8EAAAAAAAAAAAUwEUEAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-29T11:54:55.296Z",
               "EditorCaption": ""
             },
             {
@@ -76,7 +60,7 @@
               "RelativeDocumentMoniker": "OpenCVApplication.cpp",
               "ToolTip": "C:\\Users\\Vlad\\Documents\\FACULTA\\AN3\\SEM2\\1. PROIECT_PI\\TrafficSignDetection\\TSD\\OpenCVApplication.cpp",
               "RelativeToolTip": "OpenCVApplication.cpp",
-              "ViewState": "AQIAAIoAAAAAAAAAAAAUwKQAAAATAAAA",
+              "ViewState": "AQIAAJMAAAAAAAAAAAAuwKIAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-10T08:55:05.475Z",
               "EditorCaption": ""

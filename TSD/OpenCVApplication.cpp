@@ -93,19 +93,13 @@ Mat conturTracing(Mat src) {
 	return dst;
 }
 
-void houghTransform() {
+Mat houghTransform(Mat src) {
 	uchar PIXEL_OBIECT = 0;
 	uchar PIXEL_FUNDAL = 255;
 	uchar PIXEL_CONTUR = 255;
 	
 	uchar RO_MAX = 144;
 	uchar THETA_MAX = 360;
-
-	char fname[MAX_PATH];
-	while (openFileDlg(fname))
-	{
-		Mat src;
-		src = imread(fname, IMREAD_GRAYSCALE);
 
 		Mat hough = Mat::zeros(RO_MAX+1, THETA_MAX+1, CV_8UC1);
 		int ro, theta;
@@ -186,18 +180,35 @@ void houghTransform() {
 		// Counting groups (number of edges)
 		int numberOfEdges = edgeGroups.size();
 		std::cout << "Number of edges: " << numberOfEdges << std::endl;
+		
+		
+		imshow("Contur", contur);
+		waitKey();
 
+		return houghImg;
+}
+
+void testHoughTransform() {
+
+	char fname[MAX_PATH];
+	while (openFileDlg(fname))
+	{
+		Mat src;
+		src = imread(fname, IMREAD_GRAYSCALE);
+
+		
+		Mat houghImg = houghTransform(src);
 
 		imshow("source", src);
 		imshow("hough acc", houghImg);
-		
+
 		waitKey();
 	}
 }
 
 void callPipeline() {
 	//BGR2HSV();
-	houghTransform();
+	testHoughTransform();
 }
 
 int main()
