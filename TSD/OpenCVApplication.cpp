@@ -22,75 +22,65 @@ int inside(Mat src, int inputI, int inputJ) {
 	return 0;
 }
 
-Mat conturTracing(Mat src) {
+Mat urmarireContur(Mat src)
+{
+	int di[8] = { 0,-1,-1,-1,0,1,1,1 };
+	int dj[8] = { 1,1,0,-1,-1,-1,0,1 };
+	
+	Mat src_color = Mat::zeros(src.size(), CV_8UC1);
 
-	int PIXEL_OBIECT = 0, PIXEL_FUNDAL = 255;
+	int height = src.rows;
+	int width = src.cols;
+	int dir = 7;
 
-	int di[8] = { 0, -1, -1, -1,  0,  1, 1, 1 };
-	int dj[8] = { 1, 1,	0,	-1, -1, -1, 0, 1 };
+	Point2d p1;
+	int i_aux, j_aux;
 
-	int height = src.rows, width = src.cols;
-	int vecinatatea = 8;//4 << 1;//isN8;
-	Mat dst = Mat::zeros(height, width, CV_8UC1);
-	std::vector<int> coduri;
-	Point2d startPixel, pixelCurent;
-
-	int getOut = 0;
-
-	for (int i = 0; i < height && getOut == 0; i++) {
-		for (int j = 0; j < width && getOut == 0; j++) {
-			if (src.at<uchar>(i, j) == PIXEL_OBIECT) {
-				// INCEPE ALGORITMUL; Initializari
-				startPixel = Point2d(i, j);
-				std::cout << startPixel << std::endl;
-				pixelCurent = Point2d(i, j);
-
-				int schimbari = 1;
-				int dir = 7;
-				dir = (7 + 6) % 8;
-				do {
-					printf("Iteratia %d----------\n", schimbari);
-					printf("dir curent: %d\n", dir);
-					// Verificam vecinii
-					Point2d vecin = Point2d(pixelCurent.x + di[dir], pixelCurent.y + dj[dir]);
-					std::cout << "pixel vecin " << vecin << std::endl;
-					if (!inside(src, vecin.x, vecin.y) || src.at<uchar>(vecin.x, vecin.y) == PIXEL_FUNDAL)
-					{
-						dir++;
-						if (dir >= 8) dir %= 8;
-					}
+	int forda = 1;
+	for (int i = 0; i < height && forda; i++)
+		for (int j = 0; j < width; j++)
+		{
+			if (src.at<uchar>(i, j) == 0)
+			{
+				src_color.at<uchar>(i, j) = 255;
+				src.at<uchar>(i, j) = 0;
+				p1 = Point2d(i, j);
+				int k = 0;
+				int not_finished = 1;
+				
+				while (not_finished)
+				{
+					if (dir % 2 == 0)
+						dir = (dir + 7) % 8;
 					else
+						dir = (dir + 6) % 8;
+
+					while (1)
 					{
-						// src de vecin.x, vecin.y ar fi PIXEL_OBIECT
-						coduri.push_back(dir);
-						printf(" dir de schimbat: %d\n", dir);
-						pixelCurent = vecin;
-						if (dir % 2 == 1) {
-							dir = (dir + 6) % 8;
+						if (inside(src, i, j) && p1.x == i && p1.y == j && k != 0)
+						{
+							not_finished = 0;
+							break;
+						}
+
+						if (inside(src, i + di[dir], j + dj[dir]) && src.at<uchar>(i + di[dir], j + dj[dir]) == 0)
+						{
+							src_color.at<uchar>(i + di[dir], j + dj[dir]) = 255;
+							i = i + di[dir];
+							j = j + dj[dir];
+							k++;
+							break;
 						}
 						else
-						{
-							dir = (dir + 7) % 8;
-						}
-						schimbari++;
-						std::cout << "pixel curent " << pixelCurent << std::endl;
+							dir = (dir + 1) % 8;
 					}
-
-				} while (pixelCurent != startPixel);
-				//while (schimbari < 10);//while (pixelCurent != startPixel);
-				getOut = 1;
+				}
+				forda = 0;
+				break;
 			}
 		}
-	}
 
-	for (int i = 0; i < coduri.size(); i++) {
-		dst.at<uchar>(startPixel.x + di[coduri.at(i)],
-			startPixel.y + dj[coduri.at(i)]) = 255;
-		startPixel.x += di[coduri.at(i)];
-		startPixel.y += dj[coduri.at(i)];
-	}
-
-	return dst;
+	return src_color;
 }
 
 Mat houghTransform(Mat src) {
@@ -105,7 +95,7 @@ Mat houghTransform(Mat src) {
 		int ro, theta;
 		
 		int height = src.rows, width = src.cols;
-		Mat contur = conturTracing(src);
+		Mat contur = urmarireContur(src);
 		
 		for (int x = 0; x < height; x++) {
 			for (int y = 0; y < width; y++) {
@@ -198,7 +188,6 @@ void testHoughTransform() {
 
 		
 		Mat houghImg = houghTransform(src);
-
 		imshow("source", src);
 		imshow("hough acc", houghImg);
 
@@ -206,9 +195,26 @@ void testHoughTransform() {
 	}
 }
 
+void testBoundingBox() {
+
+	char fname[MAX_PATH];
+	while (openFileDlg(fname))
+	{
+		Mat src;
+		src = imread(fname, IMREAD_GRAYSCALE);
+
+
+		drawBoundingBox(src);
+		//imshow("source", src);
+
+		//waitKey(0);
+	}
+}
+
 void callPipeline() {
 	//BGR2HSV();
-	testHoughTransform();
+	//testHoughTransform();
+	testBoundingBox();
 }
 
 int main()

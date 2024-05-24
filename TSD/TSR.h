@@ -3,3 +3,4 @@
 
 void openImage();
 void BGR2HSV();
+void drawBoundingBox(Mat src);
