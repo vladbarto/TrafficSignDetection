@@ -60,6 +60,126 @@ void BGR2HSV(Mat src, Mat H, Mat S, Mat V) {
 
 }
 
+Mat filterbyRed(Mat H, Mat S, Mat V)
+{
+	Mat newmat(S.rows, S.cols, CV_8UC1);
+	for (size_t nrow = 0; nrow < S.rows; nrow++)
+	{
+		for (size_t ncol = 0; ncol < S.cols; ncol++)
+		{
+			uchar h = H.at<uchar>(nrow, ncol);
+			uchar s = S.at<uchar>(nrow, ncol);
+			uchar v = V.at<uchar>(nrow, ncol);
+			if (((h >= 0 && h < 15) || (h > 240 && h <= 255)) &&
+				(s > 100) &&
+				(v > 110))
+			{
+				newmat.at<uchar>(nrow, ncol) = 255;
+			}
+			else
+			{
+				newmat.at<uchar>(nrow, ncol) = 0;
+			}
+		}
+	}
+	return newmat;
+}
+
+Mat filterbyBlue(Mat H, Mat S, Mat V)
+{
+	Mat newmat(S.rows, S.cols, CV_8UC1);
+	for (size_t nrow = 0; nrow < S.rows; nrow++)
+	{
+		for (size_t ncol = 0; ncol < S.cols; ncol++)
+		{
+			uchar h = H.at<uchar>(nrow, ncol);
+			uchar s = S.at<uchar>(nrow, ncol);
+			uchar v = V.at<uchar>(nrow, ncol);
+			if ((h >= 140 && h <= 185) && ((s > 100) && (v > 110)))
+			{
+				newmat.at<uchar>(nrow, ncol) = 255;
+			}
+			else
+			{
+				newmat.at<uchar>(nrow, ncol) = 0;
+			}
+		}
+	}
+	return newmat;
+}
+
+bool isInside(Mat img, int i, int j)
+{
+	if ((i >= 0 && i < img.rows) && (j >= 0 && j < img.cols)) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+Mat inchidere(Mat src, int dim) {
+	bool ok = true;
+	int height = src.rows;
+	int width = src.cols;
+	int mij = dim / 2;
+
+	Mat dst = Mat(height, width, CV_8UC1);
+	Mat dst2 = Mat(height, width, CV_8UC1);
+	for (int i = 0; i < height; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			dst.at<uchar>(i, j) = 0;
+			dst2.at<uchar>(i, j) = 0;
+		}
+	}
+
+	for (int i = 0; i < height; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			if (src.at<uchar>(i, j) == 255) {
+				dst.at<uchar>(i, j) = 255;
+				for (int k = 0; k < dim; k++) {
+					for (int t = 0; t < dim; t++) {
+						if (isInside(src, i + k - mij, j + t - mij) && dst.at<uchar>(i + k - mij, j + t - mij) == 0) {
+							dst.at<uchar>(i + k - mij, j + t - mij) = 255;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	for (int i = 0; i < height; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			if (dst.at<uchar>(i, j) == 255) {
+				ok = false;
+				for (int k = 0; k < dim; k++) {
+					for (int t = 0; t < dim; t++) {
+						if (!isInside(dst, i + k - mij, j + t - mij) || dst.at<uchar>(i + k - mij, j + t - mij) == 0) {
+							ok = true;
+						}
+					}
+				}
+				if (ok == false) {
+					dst2.at<uchar>(i, j) = 255;
+				}
+			}
+		}
+	}
+
+
+	imshow("image", src);
+	imshow("dilatare", dst);
+	imshow("inchidere", dst2);
+
+	return dst2;
+}
+
 void openImage() {
 	char fname[MAX_PATH];
 	if (openFileDlg(fname))

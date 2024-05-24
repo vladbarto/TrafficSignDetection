@@ -54,13 +54,26 @@ int main()
 					Mat H = Mat(height, width, CV_8UC1);
 					Mat S = Mat(height, width, CV_8UC1);
 					Mat V = Mat(height, width, CV_8UC1);
+					Mat redMat = Mat(height, width, CV_8UC1);
+					Mat blueMat = Mat(height, width, CV_8UC1);
+					Mat redMatClosed = Mat(height, width, CV_8UC1);
+					Mat blueMatClosed = Mat(height, width, CV_8UC1);
 
 					BGR2HSV(src, H, S, V);
+					redMat = filterbyRed(H, S, V);
+					blueMat = filterbyBlue(H, S, V);
+					redMatClosed = inchidere(redMat, 31);
+					blueMatClosed = inchidere(blueMat, 11);
 
 					imshow("input image", src);
-					imshow("H", H);
-					imshow("S", S);
-					imshow("V", V);
+					//imshow("H", H);
+					//imshow("S", S);
+					//imshow("V", V);
+					imshow("filter_red", redMat);
+					imshow("filter_blue", blueMat);
+					imshow("filter_red_closed", redMatClosed);
+					imshow("filter_blue_closed", blueMatClosed);
+
 
 					waitKey();
 				}
