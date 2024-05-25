@@ -5,7 +5,14 @@
 #include "common.h"
 #include "Demo.h"
 #include "TSR.h"
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <opencv2/opencv.hpp>
+using namespace std;
+using namespace cv;
 
+//
 //void callPipeline() {
 //	BGR2HSV();
 //}
@@ -19,36 +26,20 @@ int main()
 		system("cls");
 		destroyAllWindows();
 		printf("Menu:\n");
-		//printf(" 1 - Open image\n");
-		//printf(" 2 - Open BMP images from folder\n");
-		//printf(" 3 - Image negative - diblook style\n");
-		printf(" 4 - BGR->HSV\n");
-		//printf(" 5 - Resize image\n");
-		//printf(" 6 - Canny edge detection\n");
-		//printf(" 7 - Edges in a video sequence\n");
-		//printf(" 8 - Snap frame from live video\n");
-		//printf(" 9 - Mouse callback demo\n");
+		printf(" 1 - Magie\n");
 		printf(" 0 - Exit\n\n");
 		printf("Option: ");
 		scanf("%d",&op);
 		switch (op)
 		{
-			//case 1:
-			//	testOpenImage();
-			//	break;
-			//case 2:
-			//	testOpenImagesFld();
-			//	break;
-			//case 3:
-			//	testParcurgereSimplaDiblookStyle(); //diblook style
-			//	break;
-			case 4:
+			case 1:
 				char fname[MAX_PATH];
 				while (openFileDlg(fname))
 				{
 					Mat src = imread(fname);
 					int height = src.rows;
 					int width = src.cols;
+					int labelSize;
 
 					// Componentele d eculoare ale modelului HSV
 					Mat H = Mat(height, width, CV_8UC1);
@@ -58,22 +49,30 @@ int main()
 					Mat blueMat = Mat(height, width, CV_8UC1);
 					Mat redMatClosed = Mat(height, width, CV_8UC1);
 					Mat blueMatClosed = Mat(height, width, CV_8UC1);
+					Mat labels = Mat(height, width, CV_32SC1);
+					Mat cleanRed = Mat(height, width, CV_8UC1);
 
 					BGR2HSV(src, H, S, V);
 					redMat = filterbyRed(H, S, V);
 					blueMat = filterbyBlue(H, S, V);
-					redMatClosed = inchidere(redMat, 31);
-					blueMatClosed = inchidere(blueMat, 11);
+					labels = douaTreceri(redMat, &labelSize);
+					cleanRed = deleteSmallObj(labels, redMat, labelSize);
+					redMatClosed = inchidere(cleanRed, 5);
+					//blueMatClosed = inchidere(blueMat, 11);
+					
+					detectShapes(redMatClosed);
 
 					imshow("input image", src);
 					//imshow("H", H);
 					//imshow("S", S);
 					//imshow("V", V);
 					imshow("filter_red", redMat);
-					imshow("filter_blue", blueMat);
-					imshow("filter_red_closed", redMatClosed);
-					imshow("filter_blue_closed", blueMatClosed);
-
+					imshow("clean_red", cleanRed);
+					/*imshow("filter_blue", blueMat);
+					imshow("filter_red_closed", redMatClosed);*/
+					//imshow("filter_blue_closed", blueMatClosed);
+					//imshow("sharp", redSharp);
+					//std::cout << countEdges(redSharp) << std::endl;
 
 					waitKey();
 				}
@@ -102,3 +101,5 @@ int main()
 	//	callPipeline();
 	return 0;
 }
+
+

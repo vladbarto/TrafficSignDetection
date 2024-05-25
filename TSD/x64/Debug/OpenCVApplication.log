@@ -1,4 +1,33 @@
 ﻿  OpenCVApplication.cpp
+  TSR.cpp
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(54,32): warning C4244: '=': conversion from 'float' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=uchar
+          ]
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(55,26): warning C4244: '=': conversion from 'float' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=uchar
+          ]
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(56,26): warning C4244: '=': conversion from 'float' to '_Tp', possible loss of data
+          with
+          [
+              _Tp=uchar
+          ]
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(69,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(70,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(71,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(76,32): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(80,32): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(94,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(95,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(96,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(99,32): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(103,32): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(378,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\TSR.cpp(380,11): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   OpenCVApplication.vcxproj -> E:\FACULTATE\AN 3\SEMESTRUL 2\PI\PROIECT\TrafficSignDetection\TSD\x64\Debug\OpenCVApplication.exe
   OpenCV\dll\Debug\opencv_ffmpeg340_64.dll
   OpenCV\dll\Debug\opencv_world340d.dll
