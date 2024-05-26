@@ -10,4 +10,4 @@ Mat inchidere(Mat src, int dim);
 Mat douaTreceri(Mat img, int* labelSize);
 Mat deleteSmallObj(Mat labels, Mat src, int labelSize);
 
-void detectShapes(Mat binaryImage);
+Mat detectShapes(Mat binaryImage);

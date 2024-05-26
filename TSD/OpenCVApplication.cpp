@@ -49,25 +49,36 @@ int main()
 					Mat blueMat = Mat(height, width, CV_8UC1);
 					Mat redMatClosed = Mat(height, width, CV_8UC1);
 					Mat blueMatClosed = Mat(height, width, CV_8UC1);
-					Mat labels = Mat(height, width, CV_32SC1);
+					Mat labelsBlue = Mat(height, width, CV_32SC1);
+					Mat labelsRed = Mat(height, width, CV_32SC1);
 					Mat cleanRed = Mat(height, width, CV_8UC1);
+					Mat cleanBlue = Mat(height, width, CV_8UC1);
+					Mat rezRed = Mat(height, width, CV_8UC1);
+					Mat rezBlue = Mat(height, width, CV_8UC1);
 
 					BGR2HSV(src, H, S, V);
 					redMat = filterbyRed(H, S, V);
 					blueMat = filterbyBlue(H, S, V);
-					labels = douaTreceri(redMat, &labelSize);
-					cleanRed = deleteSmallObj(labels, redMat, labelSize);
+					labelsRed = douaTreceri(redMat, &labelSize);
+					cleanRed = deleteSmallObj(labelsRed, redMat, labelSize);
 					redMatClosed = inchidere(cleanRed, 5);
-					//blueMatClosed = inchidere(blueMat, 11);
+
+					labelsBlue = douaTreceri(blueMat, &labelSize);
+					cleanBlue = deleteSmallObj(labelsBlue, blueMat, labelSize);
+					blueMatClosed = inchidere(cleanBlue, 5);
 					
-					detectShapes(redMatClosed);
+					rezRed = detectShapes(redMatClosed);
+					rezBlue = detectShapes(blueMatClosed);
+
+					imshow("Detected Red", rezRed);
+					imshow("Detected Blue", rezBlue);
 
 					imshow("input image", src);
 					//imshow("H", H);
 					//imshow("S", S);
 					//imshow("V", V);
 					imshow("filter_red", redMat);
-					imshow("clean_red", cleanRed);
+					//imshow("clean_red", cleanRed);
 					/*imshow("filter_blue", blueMat);
 					imshow("filter_red_closed", redMatClosed);*/
 					//imshow("filter_blue_closed", blueMatClosed);

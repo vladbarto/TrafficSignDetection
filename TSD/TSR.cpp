@@ -69,8 +69,9 @@ Mat filterbyRed(Mat H, Mat S, Mat V)
 			uchar h = H.at<uchar>(nrow, ncol);
 			uchar s = S.at<uchar>(nrow, ncol);
 			uchar v = V.at<uchar>(nrow, ncol);
-			if (((h >= 0 && h < 15) || (h > 240 && h <= 255)) &&
-				(s > 90) &&
+			//printf("%d\n", h);
+			if (((h >= 0 && h < 15) || (h > 215 && h <= 255)) &&
+				(s > 70) &&
 				(v > 70))
 			{
 				newmat.at<uchar>(nrow, ncol) = 255;
@@ -304,10 +305,6 @@ Mat deleteSmallObj(Mat labels, Mat src, int labelSize) {
 		}
 	}
 
-	for (int i = 0; i < labelSize + 1; i++) {
-		cout << aria[i] << endl;
-	}
-
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {
 			if (aria[labels.at<int>(i, j)] < minSize) {
@@ -355,7 +352,7 @@ void detectTriangles(Mat& resultImage, const vector<vector<Point>>& contours, in
 	}
 }
 
-void detectShapes(Mat src) {
+Mat detectShapes(Mat src) {
 	Mat resultImage = Mat::zeros(src.size(), CV_8UC3);
 	cvtColor(src, resultImage, COLOR_GRAY2BGR);
 
@@ -381,7 +378,7 @@ void detectShapes(Mat src) {
 		// Compute your measure
 		float measure = cnz / n;
 
-		if (measure >= 0.6) {
+		if (measure >= 0.65) {
 			ellipse(resultImage, ell, Scalar(0, measure * 255, 255 - measure * 255), 3);
 		}
 		else {
@@ -389,7 +386,8 @@ void detectShapes(Mat src) {
 		}
 	}
 
-	imshow("Detected Shapes", resultImage);
+	return resultImage;
+	
 }
 
 /* cod smecher s-ar putea sa mearga de data asta*/
