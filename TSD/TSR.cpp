@@ -572,7 +572,7 @@ void detectShapes(Mat src, Mat output, boolean isRed) {
 		// cu cat e mai aproape de 0, forma se apropie de un poligon cu numar redus de laturi 
 		if (measure >= 0.6) {
 			ellipse(output, ell, Scalar(0, measure * 255, 255 - measure * 255), 3);
-			drawBoundingBox(output, contours, isRed, i, 0);0
+			drawBoundingBox(output, contours, isRed, i, 0);
 		}
 		else if (measure >= 0.4) {
 			detectOctogon(output, contours, isRed, i);
