@@ -14,13 +14,14 @@
 
 ## Modules
 - `Documentation_TSD_PI_SS2023/24.pdf`: Documentation (english)
-	- it's WIP; to edit the document, [see this link](https://docs.google.com/document/d/14YRY6KIQ4P90PXBVY7GbaN0VgnwQGLwolHiTl9EFmdM/edit?usp=sharing)
+	- it's finished; to read the document, [see this link](https://docs.google.com/document/d/14YRY6KIQ4P90PXBVY7GbaN0VgnwQGLwolHiTl9EFmdM/edit?usp=sharing)
 - `Media`: folder with pictures for README only
 
 ## Workflow (pipeline)
 ![pipeline](./Media/pipeline.jpeg)
 
 ## Resources
+Mention: extra resources can be found in the documentation.
 - Color detection & Object Tracking (OpenCV Tutorials): https://www.opencv-srf.com/2010/09/object-detection-using-color-seperation.html
 - Shape detection & Tracking using Contours (OpenCV Tutorials): https://www.opencv-srf.com/2011/09/object-detection-tracking-using-contours.html
 - Cod rutier: Clasificare semne de circulatie: https://www.codrutier.ro/semne-de-circulatie
